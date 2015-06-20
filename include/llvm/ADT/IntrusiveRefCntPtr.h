@@ -154,6 +154,9 @@ public:
     }
 
     template <class X>
+    friend class IntrusiveRefCntPtr;
+
+    template <class X>
     IntrusiveRefCntPtr(IntrusiveRefCntPtr<X>&& S) : Obj(S.get()) {
       S.Obj = 0;
     }
